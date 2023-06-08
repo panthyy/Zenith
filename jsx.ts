@@ -67,9 +67,7 @@ export const h = (tag: string | Function, props: any, ...children: any[]) => {
     }
   ) as { children: any[]; textNodes: Function[] };
 
-  createEffect(() => {
-    processed.textNodes.forEach((textNode) => textNode());
-  });
+  processed.textNodes.forEach((textNode) => createEffect(textNode));
 
   node.append(...processed.children);
 

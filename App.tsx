@@ -5,7 +5,7 @@ export const App = () => {
 
   return (
     <div>
-      <h2>Home {num} </h2>
+      <h2>Home {() => num() * 2} </h2>
       <button
         onclick={() => {
           console.log("click");
